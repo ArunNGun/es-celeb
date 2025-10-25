@@ -5,6 +5,9 @@ import Navigation from "@/components/navigation/navigation"
 import Footer from "@/components/footer/footer"
 import styles from "./about.module.css"
 
+// Note: Metadata export doesn't work in client components
+// Consider moving to a server component or using next/head for dynamic meta tags
+
 export default function AboutPage() {
   return (
     <div className={styles.container}>
