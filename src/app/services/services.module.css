@@ -1,0 +1,95 @@
+.container {
+  min-height: 100vh;
+  background-color: #f5f1ed;
+}
+
+.main {
+  padding: 0;
+  margin-top: 80px;
+  padding: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  position: relative;
+  padding: 0 16px 32px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  background-color: #f5f1ed;
+  cursor: default;
+  pointer-events: none;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.labelContainer {
+  padding: 1rem 1.5rem 1rem 1rem;
+  background-color: #f5f1ed;
+  border-bottom: 1px solid #d4cdc5;
+  display: flex;
+  justify-content: center;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #2c3e50;
+  border: 1px solid #2c3e50;
+  padding: 0.625rem 1.75rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .labelContainer {
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .labelContainer {
+    padding: 1.75rem 1.75rem 2.5rem 1.75rem;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    padding: 0.575rem 1.5rem;
+  }
+}

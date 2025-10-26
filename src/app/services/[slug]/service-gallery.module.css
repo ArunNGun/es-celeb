@@ -1,0 +1,146 @@
+.main {
+  min-height: 100vh;
+  background-color: #f5f1ed;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background-color: #5a6f7d;
+  color: white;
+  padding: 8rem 3rem 3rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.backLink:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Gallery Grid - Masonry Layout */
+.gallery {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  grid-auto-flow: dense;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .header {
+    padding: 6rem 1.5rem 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/* Gallery Items - Varying Heights for Masonry Effect */
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.galleryItem:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Create masonry effect with varying heights */
+.galleryItem:nth-child(3n + 1) {
+  grid-row: span 2;
+}
+
+.galleryItem:nth-child(3n + 2) {
+  grid-row: span 1;
+}
+
+.galleryItem:nth-child(3n + 3) {
+  grid-row: span 2;
+}
+
+.galleryItem {
+  aspect-ratio: 4 / 5;
+  min-height: 400px;
+}
+
+.galleryItem:nth-child(3n + 2) {
+  aspect-ratio: 16 / 9;
+  min-height: 250px;
+}
+
+@media (max-width: 768px) {
+  /* Reset masonry on mobile for consistent layout */
+  .galleryItem:nth-child(3n + 1),
+  .galleryItem:nth-child(3n + 2),
+  .galleryItem:nth-child(3n + 3) {
+    grid-row: span 1;
+    aspect-ratio: 4 / 3;
+    min-height: 300px;
+  }
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.galleryItem:hover .image {
+  transform: scale(1.05);
+}
+
+/* Staggered animation on load */
+@media (prefers-reduced-motion: no-preference) {
+  .galleryItem {
+    animation: fadeInUp 0.6s ease-out backwards;
+  }
+
+  .galleryItem:nth-child(1) { animation-delay: 0.05s; }
+  .galleryItem:nth-child(2) { animation-delay: 0.1s; }
+  .galleryItem:nth-child(3) { animation-delay: 0.15s; }
+  .galleryItem:nth-child(4) { animation-delay: 0.2s; }
+  .galleryItem:nth-child(5) { animation-delay: 0.25s; }
+  .galleryItem:nth-child(6) { animation-delay: 0.3s; }
+  .galleryItem:nth-child(n+7) { animation-delay: 0.35s; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
