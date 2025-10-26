@@ -58,10 +58,10 @@
 /* Logo - Centered on Home Page */
 .logo {
   color: #ffffff;
-  font-size: 1.875rem;
-  font-family: var(--font-montserrat), sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 1.975rem;
+  font-family: var(--font-playfair), serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -74,9 +74,9 @@
 .logoSmall {
   color: #ffffff;
   font-size: 1.5rem;
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-playfair), serif;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   margin: 0;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -104,11 +104,11 @@
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    /* transform: translateX(0); */
   }
 }
 
@@ -134,18 +134,18 @@
 /* Logo - Desktop: Centered, Mobile: Top */
 .menuLogo {
   color: #ffffff;
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-playfair), serif;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   margin: 0;
   text-decoration: none;
   animation: fadeIn 0.6s ease-out;
 }
 .menuLogoOpen {
   color: #ffffff;
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-playfair), serif;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   margin: 0;
   text-decoration: none;
   animation: fadeIn 0.6s ease-out;
@@ -220,9 +220,9 @@
   /* Logo - Right Aligned on Other Pages when menu is opened */
   color: #ffffff;
   font-size: 1.5rem;
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-playfair), serif;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   margin: 0;
   text-decoration: none;
   transition: all 0.3s ease;

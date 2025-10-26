@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Montserrat, Charm } from "next/font/google"
+import { Montserrat, Charm, Playfair_Display } from "next/font/google"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -13,6 +13,13 @@ const charm = Charm({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-charm",
+  display: "swap",
+})
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
   display: "swap",
 })
 
@@ -82,7 +89,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} ${charm.variable}`}>
+      <body className={`${montserrat.variable} ${charm.variable} ${playfair.variable}`}>
         {children}
       </body>
     </html>

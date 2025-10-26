@@ -3,20 +3,35 @@
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { motion } from "framer-motion"
 import styles from "./navigation.module.css"
 
-const MenuIcon = () => (
+const AnimatedMenuIcon = ({ isOpen }: { isOpen: boolean }) => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="3" y1="12" x2="21" y2="12"></line>
-    <line x1="3" y1="6" x2="21" y2="6"></line>
-    <line x1="3" y1="18" x2="21" y2="18"></line>
-  </svg>
-)
-
-const CloseIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"></line>
-    <line x1="6" y1="6" x2="18" y2="18"></line>
+    <motion.line
+      x1="5"
+      y1="6"
+      x2="19"
+      y2="6"
+      animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    />
+    <motion.line
+      x1="2"
+      y1="12"
+      x2="22"
+      y2="12"
+      animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    />
+    <motion.line
+      x1="5"
+      y1="18"
+      x2="19"
+      y2="18"
+      animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    />
   </svg>
 )
 
@@ -43,7 +58,7 @@ export default function Navigation() {
         {/* Left Side - Menu Button and Page Name */}
         <div className={styles.leftSection}>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className={styles.menuButton} aria-label="Toggle menu">
-            {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+            <AnimatedMenuIcon isOpen={isMenuOpen} />
           </button>
           {!isHomePage && currentPage && (
             <span className={styles.pageName}>{currentPage}</span>
@@ -59,12 +74,12 @@ export default function Navigation() {
         </Link>
       </div>
 
-      {/* Mobile Menu with CSS Transitions */}
+      {/* Mobile Menu with Framer Motion */}
       {isMenuOpen && (
         <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.menuOpen : ''}`}>
           {/* Close Button */}
           <button onClick={() => setIsMenuOpen(false)} className={styles.closeButton} aria-label="Close menu">
-            <CloseIcon />
+            <AnimatedMenuIcon isOpen={true} />
           </button>
 
           {/* Logo at Top */}
