@@ -41,9 +41,9 @@
 }
 
 .heroTitle {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-charm), cursive;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: 0.05em;
   color: #6b7280;
     width: 50vw;

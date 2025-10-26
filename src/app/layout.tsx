@@ -1,12 +1,19 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Montserrat } from "next/font/google"
+import { Montserrat, Charm } from "next/font/google"
 import "./globals.css"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-montserrat"
+})
+
+const charm = Charm({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-charm",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -75,7 +82,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.variable}>
+      <body className={`${montserrat.variable} ${charm.variable}`}>
         {children}
       </body>
     </html>
