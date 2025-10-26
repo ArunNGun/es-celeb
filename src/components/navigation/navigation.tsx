@@ -29,9 +29,6 @@ export default function Navigation() {
     { label: "ABOUT", href: "/about" },
     { label: "EVENTS", href: "/events" },
     { label: "APPROACH", href: "/approach" },
-    { label: "PRESS", href: "/press" },
-    { label: "EDUCATION", href: "/education" },
-    { label: "TECH", href: "/tech" },
     { label: "CONTACT", href: "/contact" }
   ]
 
