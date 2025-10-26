@@ -27,7 +27,7 @@ export default function Navigation() {
 
   const menuItems = [
     { label: "ABOUT", href: "/about" },
-    { label: "EVENTS", href: "/events" },
+    { label: "SERVICES", href: "/services" },
     { label: "APPROACH", href: "/approach" },
     { label: "CONTACT", href: "/contact" }
   ]
