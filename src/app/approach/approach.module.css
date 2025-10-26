@@ -1,0 +1,434 @@
+.container {
+  min-height: 100vh;
+  background-color: #f5f1ed;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Philosophy Section */
+.philosophySection {
+  background-color: #f5f1ed;
+  padding: 6rem 2rem;
+}
+
+.philosophyContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophyHeadline {
+  font-family: var(--font-cormorant), serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #2c3e50;
+  margin-bottom: 3rem;
+}
+
+.philosophyContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.philosophyText {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #4a5568;
+  margin-bottom: 1.75rem;
+  text-align: left;
+}
+
+.philosophyText:last-child {
+  margin-bottom: 0;
+}
+
+/* Process Section */
+.processSection {
+  background-color: #5a6f7d;
+  padding: 6rem 2rem;
+}
+
+.processContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.processList {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.processStep {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.stepNumber {
+  font-family: var(--font-cormorant), serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #d4af37;
+  line-height: 1;
+}
+
+.stepContent {
+  padding-top: 0.5rem;
+}
+
+.stepTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.stepDescription {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Why Section */
+.whySection {
+  background-color: #f5f1ed;
+  padding: 6rem 2rem;
+}
+
+.whyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.whySection .sectionTitle {
+  color: #2c3e50;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.whyCard {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.whyTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.whyText {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* Gallery Section */
+.gallerySection {
+  background-color: #5a6f7d;
+  padding: 6rem 2rem;
+}
+
+.galleryContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.galleryIntro {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-top: -2rem;
+  margin-bottom: 4rem;
+}
+
+.themesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.themeCard {
+  background-color: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.themeCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.themeImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.themeImage {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.themeCard:hover .themeImage {
+  transform: scale(1.05);
+}
+
+.themeContent {
+  padding: 2rem;
+}
+
+.themeTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.themeDescription {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .philosophyHeadline {
+    font-size: 2rem;
+  }
+
+  .whyGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .themesList {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .processStep {
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+  }
+
+  .stepNumber {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  .philosophySection,
+  .processSection,
+  .whySection,
+  .gallerySection {
+    padding: 4rem 1.5rem;
+  }
+
+  .philosophyHeadline {
+    font-size: 1.75rem;
+  }
+
+  .philosophyText {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 0.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .processStep {
+    grid-template-columns: 50px 1fr;
+    gap: 1.25rem;
+  }
+
+  .stepNumber {
+    font-size: 2rem;
+  }
+
+  .stepTitle {
+    font-size: 1.125rem;
+  }
+
+  .stepDescription {
+    font-size: 0.9375rem;
+  }
+
+  .whyCard {
+    padding: 2rem;
+  }
+
+  .themeImageWrapper {
+    height: 300px;
+  }
+
+  .themeContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .philosophySection,
+  .processSection,
+  .whySection,
+  .gallerySection {
+    padding: 3rem 1rem;
+  }
+
+  .philosophyHeadline {
+    font-size: 1.5rem;
+  }
+
+  .philosophyText {
+    font-size: 0.9375rem;
+  }
+
+  .processStep {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stepNumber {
+    font-size: 2.5rem;
+  }
+
+  .stepTitle {
+    font-size: 1rem;
+  }
+
+  .stepDescription {
+    font-size: 0.875rem;
+  }
+
+  .whyCard {
+    padding: 1.5rem;
+  }
+
+  .whyTitle {
+    font-size: 1rem;
+  }
+
+  .whyText {
+    font-size: 0.875rem;
+  }
+
+  .themeImageWrapper {
+    height: 250px;
+  }
+
+  .themeTitle {
+    font-size: 1.125rem;
+  }
+
+  .themeDescription {
+    font-size: 0.875rem;
+  }
+}

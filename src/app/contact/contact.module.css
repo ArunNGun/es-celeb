@@ -1,0 +1,205 @@
+.container {
+  min-height: 100vh;
+  background-color: #5a6f7d;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroSection {
+  flex: 1;
+  position: relative;
+  min-height: 100vh;
+  background-image: url('/gallery/hero/NIA07960.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem;
+}
+
+/* Dark overlay for better text readability */
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.contactOverlay {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  color: #ffffff;
+}
+
+.title {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2.5rem;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detailsTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.address,
+.contactInfo {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  padding: 0;
+  height: 28px;
+  width: 28px;
+}
+
+.socialIcon:hover {
+  opacity: 0.7;
+}
+
+.socialIcon svg {
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroSection {
+    padding: 3rem 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 2rem 1.5rem;
+    min-height: calc(100vh);
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .detailsTitle {
+    font-size: 1rem;
+  }
+
+  .address,
+  .contactInfo {
+    font-size: 0.9375rem;
+  }
+
+  .socialIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contactDetails {
+    gap: 0.5rem;
+  }
+
+  .detailsTitle {
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .address,
+  .contactInfo {
+    font-size: 0.875rem;
+  }
+
+  .socialIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
