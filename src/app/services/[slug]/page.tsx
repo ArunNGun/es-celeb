@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
+import Navigation from '@/components/navigation/navigation';
+import Footer from '@/components/footer/footer';
 import { getServiceBySlug, services } from '@/data/services';
 import styles from './service-gallery.module.css';
 
@@ -39,29 +40,46 @@ export default function ServiceGalleryPage({ params }: ServicePageProps) {
   }
 
   return (
-    <main className={styles.main}>
-      {/* Header */}
-      <div className={styles.header}>
-        <Link href="/services" className={styles.backLink}>
-          ← Back to Services
-        </Link>
-        <h1 className={styles.title}>{service.title}</h1>
+    <div className={styles.container}>
+      <Navigation />
+      
+      {/* Hero Section */}
+      <div className={styles.hero}>
+        <Image
+          src={service.featuredImage}
+          alt={service.title}
+          fill
+          priority
+          className={styles.heroImage}
+          sizes="100vw"
+        />
+      </div>
+
+      {/* Title Overlay - positioned to overlap both sections */}
+      <div className={styles.heroOverlay}>
+      <div className={styles.heroInnerOverlay}>
+        <h1 className={styles.heroTitle}>{service.title}</h1>
+        </div>
       </div>
 
       {/* Gallery Grid */}
-      <div className={styles.gallery}>
-        {service.images.map((image, index) => (
-          <div key={index} className={styles.galleryItem}>
-            <Image
-              src={image}
-              alt={`${service.title} - Image ${index + 1}`}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className={styles.image}
-            />
-          </div>
-        ))}
-      </div>
-    </main>
+      <main className={styles.main}>
+        <div className={styles.gallery}>
+          {service.images.slice(1).map((image, index) => (
+            <div key={index} className={styles.galleryItem}>
+              <Image
+                src={image}
+                alt={`${service.title} - Image ${index + 2}`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={styles.image}
+              />
+            </div>
+          ))}
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 }

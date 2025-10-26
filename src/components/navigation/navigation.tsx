@@ -33,7 +33,9 @@ export default function Navigation() {
   ]
 
   // Get current page name
-  const currentPage = menuItems.find(item => item.href === pathname)?.label || ""
+  let currentPage = menuItems.find(item => item.href === pathname)?.label || ""
+
+  if(pathname.includes('services')) currentPage = 'SERVICES'
 
   return (
     <header className={isHomePage ? styles.header : styles.headerColor}>
