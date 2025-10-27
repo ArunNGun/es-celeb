@@ -4,7 +4,7 @@
   position: relative;
 }
 
-/* Hero Section - Original Styles */
+/* Hero Section */
 .hero {
   position: relative;
   width: 100%;
@@ -80,75 +80,53 @@
 /* Main Content */
 .main {
   background-color: #f5f1ed;
-  padding: 0;
+  padding: 4rem 1rem 3rem;
+  margin-top: 2rem;
   position: relative;
   z-index: 1;
-  padding-top: 4rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
 }
 
-/* Masonry Gallery Layout */
-.gallery {
-  column-count: 4;
-  column-gap: 24px;
-  margin-bottom: 60px;
-  padding: 3rem 2rem;
+@media (max-width: 768px) {
+  .main {
+    padding: 3rem 0.5rem 2rem;
+  }
 }
 
-.galleryItem {
-  position: relative;
+/* Masonry Grid */
+.masonryGrid {
+  display: flex;
+  margin-left: -1.5rem; /* gutter compensation */
+  width: auto;
+}
+
+.masonryColumn {
+  padding-left: 1.5rem; /* gutter */
+  background-clip: padding-box;
+}
+
+/* Masonry Cards */
+.masonryCard {
+  background-color: #000;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
   overflow: hidden;
-  background-color: #e8e4df;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  margin-bottom: 24px;
-  break-inside: avoid;
-  display: block;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
-.galleryItem:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
-}
-
-.galleryImage {
+.masonryImage {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
+  height: auto;
+  display: block;
+  filter: brightness(1.08) contrast(1.15) saturate(1.2);
 }
 
-.galleryItem:hover .galleryImage {
-  transform: scale(1.05);
-}
-
-/* Fade-in animation for newly loaded images */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.galleryItem {
-  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
+/* Loading States */
 .loader {
   text-align: center;
   padding: 40px;
   color: #8a9aaa;
   font-family: var(--font-geist-sans), sans-serif;
   font-size: 14px;
-  grid-column: 1 / -1;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -181,44 +159,32 @@
   margin-top: 40px;
 }
 
-/* Tablet Styles */
-@media (max-width: 1024px) {
-  .gallery {
-    column-count: 3;
-    column-gap: 20px;
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .masonryGrid {
+    margin-left: -1rem;
+  }
+  
+  .masonryColumn {
+    padding-left: 1rem;
+  }
+  
+  .masonryCard {
+    margin-bottom: 1rem;
   }
 }
 
-/* Mobile Landscape / Small Tablet */
-@media (max-width: 768px) {
-  .main {
-    padding-top: 3rem;
+@media (max-width: 600px) {
+  .masonryGrid {
+    margin-left: -0.75rem;
   }
-
-  .gallery {
-    column-count: 2;
-    column-gap: 16px;
-    padding: 2rem 1rem;
+  
+  .masonryColumn {
+    padding-left: 0.75rem;
   }
-
-  .galleryItem {
-    margin-bottom: 16px;
-  }
-}
-
-/* Mobile Portrait */
-@media (max-width: 480px) {
-  .main {
-    padding-top: 2rem;
-  }
-
-  .gallery {
-    column-count: 1;
-    column-gap: 12px;
-    padding: 1.5rem 1rem;
-  }
-
-  .galleryItem {
-    margin-bottom: 12px;
+  
+  .masonryCard {
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
   }
 }

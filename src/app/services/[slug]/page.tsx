@@ -4,6 +4,7 @@ import { useState, useCallback, useMemo } from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Masonry from 'react-masonry-css';
 import Navigation from '@/components/navigation/navigation';
 import Footer from '@/components/footer/footer';
 import { getServiceBySlug, services } from '@/data/services';
@@ -17,10 +18,11 @@ interface ServicePageProps {
 
 const IMAGES_PER_PAGE = 12;
 
-// Generate aspect ratios for masonry layout
-const getAspectRatio = (index: number): string => {
-  const ratios = ['2/3', '3/4', '4/3', '3/2', '1/1'];
-  return ratios[index % ratios.length];
+const breakpointCols = {
+  default: 3,
+  1200: 3,
+  900: 2,
+  600: 1,
 };
 
 // Shimmer effect for loading placeholder
@@ -57,7 +59,6 @@ export default function ServiceGalleryPage({ params }: ServicePageProps) {
     service.images.length > IMAGES_PER_PAGE
   );
 
-  // Memoize the fetch function to prevent recreating on every render
   const fetchMoreData = useCallback(() => {
     const currentLength = displayedImages.length;
     const newImages = service.images.slice(
@@ -70,13 +71,11 @@ export default function ServiceGalleryPage({ params }: ServicePageProps) {
       return;
     }
 
-    // Simulate network delay for better UX
     setTimeout(() => {
       setDisplayedImages((prev) => [...prev, ...newImages]);
     }, 300);
   }, [displayedImages.length, service.images]);
 
-  // Memoize the blur data URL to avoid recreating on every render
   const blurDataURL = useMemo(
     () => `data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`,
     []
@@ -86,7 +85,17 @@ export default function ServiceGalleryPage({ params }: ServicePageProps) {
     <div className={styles.container}>
       <Navigation />
       
-      {/* Hero Section with optimized loading */}
+      {/* Preload first batch of images */}
+      {service.images.slice(0, IMAGES_PER_PAGE).map((image, index) => (
+        <link
+          key={`preload-${index}`}
+          rel="preload"
+          as="image"
+          href={image}
+        />
+      ))}
+      
+      {/* Hero Section */}
       <div className={styles.hero}>
         <Image
           src={service.featuredImage}
@@ -101,14 +110,14 @@ export default function ServiceGalleryPage({ params }: ServicePageProps) {
         />
       </div>
 
-      {/* Title Overlay - positioned to overlap both sections */}
+      {/* Title Overlay */}
       <div className={styles.heroOverlay}>
         <div className={styles.heroInnerOverlay}>
           <h1 className={styles.heroTitle}>{service.title}</h1>
         </div>
       </div>
 
-      {/* Gallery Grid with Infinite Scroll */}
+      {/* Masonry Gallery with Infinite Scroll */}
       <main className={styles.main}>
         <InfiniteScroll
           dataLength={displayedImages.length}
@@ -125,27 +134,30 @@ export default function ServiceGalleryPage({ params }: ServicePageProps) {
               You&apos;ve reached the end of our {service.title.toLowerCase()} gallery
             </div>
           }
-          className={styles.gallery}
         >
-          {displayedImages.map((image, index) => (
-            <div
-              key={`${image}-${index}`}
-              className={styles.galleryItem}
-              style={{ aspectRatio: getAspectRatio(index) }}
-            >
-              <Image
-                src={image}
-                alt={`${service.title} - Image ${index + 1}`}
-                fill
-                quality={85}
-                sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 25vw"
-                className={styles.galleryImage}
-                placeholder="blur"
-                blurDataURL={blurDataURL}
-                loading={index < IMAGES_PER_PAGE ? 'eager' : 'lazy'}
-              />
-            </div>
-          ))}
+          <Masonry
+            breakpointCols={breakpointCols}
+            className={styles.masonryGrid}
+            columnClassName={styles.masonryColumn}
+          >
+            {displayedImages.map((image, index) => (
+              <div key={`${image}-${index}`} className={styles.masonryCard}>
+                <Image
+                  src={image}
+                  alt={`${service.title} - Image ${index + 1}`}
+                  width={800}
+                  height={600}
+                  quality={85}
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                  className={styles.masonryImage}
+                  placeholder="blur"
+                  blurDataURL={blurDataURL}
+                  priority={index < 6}
+                  loading={index < 6 ? 'eager' : 'lazy'}
+                />
+              </div>
+            ))}
+          </Masonry>
         </InfiniteScroll>
       </main>
 

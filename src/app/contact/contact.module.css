@@ -9,18 +9,19 @@
   flex: 1;
   position: relative;
   min-height: 100vh;
-  background-image: url('/gallery/hero/NIA07960.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
   padding: 4rem;
+  overflow: hidden;
+}
+
+/* Next.js Image background */
+.heroImage {
+  z-index: 0;
 }
 
 /* Dark overlay for better text readability */
-.heroSection::before {
-  content: '';
+.heroOverlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,6 +34,7 @@
     rgba(0, 0, 0, 0.1) 100%
   );
   pointer-events: none;
+  z-index: 1;
 }
 
 .contactOverlay {

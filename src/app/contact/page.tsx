@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Navigation from "@/components/navigation/navigation"
 import Footer from "@/components/footer/footer"
 import { Linkedin, Instagram } from "lucide-react"
@@ -11,6 +12,24 @@ export default function ContactPage() {
       <Navigation />
       
       <div className={styles.heroSection}>
+        {/* Optimized background image using Next.js Image */}
+        <Image
+          src="/gallery/hero/NIA07960.webp"
+          alt="Contact background"
+          fill
+          priority
+          quality={90}
+          className={styles.heroImage}
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center',
+          }}
+        />
+        
+        {/* Dark overlay for better text readability */}
+        <div className={styles.heroOverlay} />
+        
         <div className={styles.contactOverlay}>
           <h1 className={styles.title}>Contact</h1>
           <p className={styles.subtitle}>&quot;Let&apos;s Start Planning Your Celebration&quot;</p>
