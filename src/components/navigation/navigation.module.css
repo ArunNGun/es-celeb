@@ -43,7 +43,7 @@
 }
 
 .menuButton:hover {
-  color: #d1d5db;
+  color: var(--color-gold);
 }
 
 .pageName {
@@ -338,9 +338,6 @@
 }
 
 .menuLink:hover {
-  opacity: 0.7;
-}
-
-.menuLink:hover {
-  color: #d1d5db;
+  color: var(--color-gold);
+  opacity: 1;
 }

@@ -45,15 +45,16 @@
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #6b7280;
-    width: 50vw;
+  color: var(--color-slate);
+  width: 50vw;
   max-width: 940px;
   margin: 0;
   line-height: 0.8;
   text-align: center;
   background-color: rgba(245, 241, 237, 0.95);
   padding: 2rem;
-  border: 1px solid rgba(107, 114, 128, 0.2);
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 4px 20px rgba(201, 169, 97, 0.15);
   backdrop-filter: blur(10px);
 }
 

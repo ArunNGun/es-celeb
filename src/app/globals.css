@@ -2,6 +2,16 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Brand Colors - Matching Logo */
+  --color-gold: #C9A961;
+  --color-gold-light: #D4B976;
+  --color-gold-dark: #B89850;
+  --color-slate: #5a6f7d;
+  --color-slate-light: #6d8290;
+  --color-slate-dark: #4a5d69;
+  --color-cream: #f5f1ed;
+  --color-cream-dark: #e8e4df;
+  
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
