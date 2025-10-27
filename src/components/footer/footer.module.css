@@ -25,12 +25,14 @@
 }
 
 .logo {
-  font-family: var(--font-montserrat), sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: #ffffff;
+  display: flex;
+  align-items: center;
   margin: 0;
+}
+
+.logoImage {
+  object-fit: contain;
+  /* filter: brightness(0) invert(1); */
 }
 
 .right {
@@ -155,8 +157,9 @@
     padding: 1.5rem 2rem 2rem;
   }
 
-  .logo {
-    font-size: 1.5rem;
+  .logoImage {
+    width: 60px;
+    height: 60px;
   }
 }
 

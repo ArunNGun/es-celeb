@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import styles from "./footer.module.css"
 
 export default function Footer() {
@@ -11,7 +12,15 @@ export default function Footer() {
       <div className={styles.content}>
         {/* Left Side - Logo */}
         <div className={styles.left}>
-          <h2 className={styles.logo}>ES CELEBRATIONS</h2>
+          <div className={styles.logo}>
+            <Image
+              src="/es_text.png"
+              alt="ES Celebrations"
+              width={180}
+              height={180}
+              className={styles.logoImage}
+            />
+          </div>
         </div>
 
         {/* Right Side - Links and Social */}

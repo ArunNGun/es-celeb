@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import styles from "./navigation.module.css"
 
@@ -70,38 +71,68 @@ export default function Navigation() {
           href="/"
           className={isHomePage ? styles.logo : styles.logoSmall}
         >
-          ES CELEBRATIONS
+          <Image
+            src="/es_horizontal.png"
+            alt="ES Celebrations"
+            width={isHomePage ? 200 : 150}
+            height={isHomePage ? 60 : 45}
+            priority
+            className={styles.logoImage}
+          />
         </Link>
       </div>
 
       {/* Mobile Menu with Framer Motion */}
       {isMenuOpen && (
-        <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.menuOpen : ''}`}>
+        <motion.nav
+          className={styles.mobileMenu}
+          initial={{ opacity: 0, }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+        >
           {/* Close Button */}
           <button onClick={() => setIsMenuOpen(false)} className={styles.closeButton} aria-label="Close menu">
             <AnimatedMenuIcon isOpen={true} />
           </button>
 
           {/* Logo at Top */}
-          <Link href="/" className={isHomePage ? styles.menuLogo : styles.menuLogoOpen} onClick={() => setIsMenuOpen(false)}>
-            ES CELEBRATIONS
-          </Link>
+          <motion.div
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+          >
+            <Link href="/" className={isHomePage ? styles.menuLogo : styles.menuLogoOpen} onClick={() => setIsMenuOpen(false)}>
+              <Image
+                src="/es_horizontal.png"
+                alt="ES Celebrations"
+                width={250}
+                height={75}
+                className={isHomePage ? styles.menuLogoImageHome : styles.menuLogoImage}
+              />
+            </Link>
+          </motion.div>
 
           {/* Menu Items - Vertical Stack */}
           <div className={styles.menuItems}>
             {menuItems.map((item, index) => (
-              <Link
+              <motion.div
                 key={item.label}
-                href={item.href}
-                className={styles.menuLink}
-                style={{ animationDelay: `${index * 0.05}s` }}
-                onClick={() => setIsMenuOpen(false)}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 + index * 0.05, duration: 0.3 }}
               >
-                {item.label}
-              </Link>
+                <Link
+                  href={item.href}
+                  className={styles.menuLink}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
             ))}
           </div>
-        </nav>
+        </motion.nav>
       )}
     </header>
   )
