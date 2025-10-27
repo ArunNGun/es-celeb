@@ -4,12 +4,17 @@
   padding: 0;
 }
 
+.divider1 {
+  width: 100%;
+  margin: auto;
+  background-color: #5a6f7d;
+    height: 3rem;
+}
 .divider {
       width: 92%;
     margin: auto;
     height: 1px;
     background-color: #edf0f1;
-    margin-top: 3rem;
 }
 
 .content {
