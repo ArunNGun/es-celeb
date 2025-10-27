@@ -33,9 +33,9 @@ export default function Footer() {
             <span className={styles.linkDivider}>FOLLOW US ON SOCIAL</span>
             
             <div className={styles.socialIcons}>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/entertainmentsportz"
+                target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
                 aria-label="Instagram"
@@ -47,28 +47,17 @@ export default function Footer() {
                 </svg>
               </a>
               
-              <a 
-                href="https://pinterest.com" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
-                aria-label="Pinterest"
+                aria-label="LinkedIn"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M8 12c0-2.5 2-4.5 4.5-4.5S17 9.5 17 12c0 1.5-.5 2.5-1.5 3.5-.5.5-1 .5-1.5.5-.5 0-1-.5-1-1 0-.5.5-1 1-1s1 .5 1 1"></path>
-                </svg>
-              </a>
-              
-              <a 
-                href="https://tiktok.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={styles.socialIcon}
-                aria-label="TikTok"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </a>
             </div>
