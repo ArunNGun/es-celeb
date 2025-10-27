@@ -18,8 +18,8 @@ export default function AboutPage() {
         <div className={styles.leftSection}>
           {/* About Section */}
           <section className={styles.section}>
-            <h2 className={styles.pageTitle}>ABOUT</h2>
-            
+            {/* <h2 className={styles.pageTitle}>ABOUT</h2>
+             */}
             <div className={styles.textContent}>
               <p className={styles.paragraph}>
                 ES Celebrations began with a shared passion for creating unforgettable experiences. What started as intimate gatherings has evolved into a distinguished event management company known for creative concepts, flawless execution, and a deeply personalized touch.
