@@ -157,7 +157,7 @@ export default function AboutPage() {
         {/* Right Side - Fixed Image */}
         <div className={styles.rightSection}>
           <Image
-            src="/gallery/about/NIA08259.jpg"
+            src="/gallery/about/NIA08259.webp"
             alt="ES Celebrations Team"
             className={styles.image}
             width={600}

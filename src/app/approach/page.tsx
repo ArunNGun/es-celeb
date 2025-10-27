@@ -17,7 +17,7 @@ export default function ApproachPage() {
       <section className={styles.hero}>
         <div className={styles.heroOverlay} />
         <Image
-          src="/gallery/hero/NIA07960.jpg"
+          src="/gallery/hero/NIA07960.webp"
           alt="ES Celebrations Approach"
           fill
           className={styles.heroImage}
@@ -165,7 +165,7 @@ export default function ApproachPage() {
             <div className={styles.themeCard}>
               <div className={styles.themeImageWrapper}>
                 <Image
-                  src="/gallery/themes/pastel/08406.jpg"
+                  src="/gallery/themes/pastel/08406.webp"
                   alt="Pastel Theme Decor - Soft, elegant baby shower and engagement decorations"
                   fill
                   className={styles.themeImage}
@@ -186,7 +186,7 @@ export default function ApproachPage() {
             <div className={styles.themeCard}>
               <div className={styles.themeImageWrapper}>
                 <Image
-                  src="/gallery/themes/blue-haldi/9192.jpg"
+                  src="/gallery/themes/blue-haldi/9192.webp"
                   alt="Blue Theme Haldi - Refreshing twist on traditional Haldi ceremony"
                   fill
                   className={styles.themeImage}
@@ -207,7 +207,7 @@ export default function ApproachPage() {
             <div className={styles.themeCard}>
               <div className={styles.themeImageWrapper}>
                 <Image
-                  src="/gallery/themes/carnival/1693.jpg"
+                  src="/gallery/themes/carnival/1693.webp"
                   alt="Carnival Theme Haldi - Fun, vibrant pool party celebration"
                   fill
                   className={styles.themeImage}
@@ -228,7 +228,7 @@ export default function ApproachPage() {
             <div className={styles.themeCard}>
               <div className={styles.themeImageWrapper}>
                 <Image
-                  src="/gallery/themes/neon/56.jpg"
+                  src="/gallery/themes/neon/56.webp"
                   alt="Neon Theme Sangeet - Bold, modern dance celebration"
                   fill
                   className={styles.themeImage}

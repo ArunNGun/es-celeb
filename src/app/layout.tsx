@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.webp',
         width: 1200,
         height: 630,
         alt: 'ES Celebrations - Luxury Event Planning',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "ES Celebrations - Luxury Event Planning",
     description: "Creating unforgettable weddings and social celebrations",
-    images: ['/og-image.jpg'],
+    images: ['/og-image.webp'],
   },
   robots: {
     index: true,

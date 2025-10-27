@@ -8,19 +8,19 @@ import styles from "./hero-carousel.module.css"
 
 const heroImages = [
   {
-    url: "/gallery/hero/NIA07960.jpg",
+    url: "/gallery/hero/NIA07960.webp",
     alt: "Luxury event celebration"
   },
   {
-    url: "/gallery/hero/PJP_5501.JPG",
+    url: "/gallery/hero/PJP_5501.webp",
     alt: "Luxury event celebration"
   },
   {
-    url: "/gallery/hero/PJP_5627.JPG",
+    url: "/gallery/hero/PJP_5627.webp",
     alt: "Spectacular event moment"
   },
   {
-    url: "/gallery/hero/SH4A7372.jpg",
+    url: "/gallery/hero/SH4A7372.webp",
     alt: "Elegant celebration"
   }
 ]
