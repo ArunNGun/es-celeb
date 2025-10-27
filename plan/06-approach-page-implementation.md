@@ -18,7 +18,7 @@ The Approach page has been successfully created to showcase ES Celebrations' phi
 **File:** `src/app/approach/approach.module.css`
 - Responsive design for all screen sizes
 - Hero section with full-height background image
-- Alternating section backgrounds (beige #f5f1ed and slate #5a6f7d)
+- Alternating section backgrounds (beige #f5f1ed and slate #08262b)
 - Golden accent color (#d4af37) for step numbers
 - Hover effects on cards and theme images
 - Mobile-first responsive breakpoints (480px, 768px, 1024px)
@@ -43,7 +43,7 @@ The Approach page has been successfully created to showcase ES Celebrations' phi
 - Three paragraphs explaining the ES Celebrations philosophy
 
 ### Signature Process Section
-- Slate background (#5a6f7d)
+- Slate background (#08262b)
 - 5 numbered steps (01-05) with golden numbers
 - Each step includes:
   - Large golden number
@@ -66,7 +66,7 @@ The Approach page has been successfully created to showcase ES Celebrations' phi
   4. Seamless On-Site Management
 
 ### Thematic Gallery Section
-- Slate background (#5a6f7d)
+- Slate background (#08262b)
 - 2x2 grid layout (responsive to 1 column on mobile)
 - 4 theme categories with images:
   1. **Pastel Theme Decor** - Soft, elegant, timeless
@@ -112,7 +112,7 @@ The following images need to be added to their respective folders:
 
 ### Color Palette
 - **Primary Background:** #f5f1ed (warm beige)
-- **Secondary Background:** #5a6f7d (slate blue-gray)
+- **Secondary Background:** #08262b (slate blue-gray)
 - **Text Dark:** #2c3e50
 - **Text Medium:** #4a5568
 - **Text Light:** #ffffff

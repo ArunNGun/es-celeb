@@ -9,7 +9,7 @@
 }
 .headerColor {
   position: fixed;
-  background-color: #596f7d;
+  background-color: #08262b;
   top: 0;
   left: 0;
   right: 0;
@@ -93,7 +93,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #5a6f7d;
+  background-color: #08262b;
   padding: 2rem;
   padding-right: 1.5rem;
   display: flex;
