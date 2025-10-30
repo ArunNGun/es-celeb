@@ -1,0 +1,53 @@
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #08262b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease-out;
+}
+
+.loaderContainer.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.logoWrapper.moveUp {
+  /* Zoom in and fade out */
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  filter: brightness(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 120px;
+  }
+}

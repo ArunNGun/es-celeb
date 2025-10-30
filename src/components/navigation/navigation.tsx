@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -48,6 +48,11 @@ export default function Navigation() {
     { label: "CONTACT", href: "/contact" }
   ]
 
+  // Close menu when pathname changes (after navigation completes)
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [pathname])
+
   // Get current page name
   let currentPage = menuItems.find(item => item.href === pathname)?.label || ""
 
@@ -86,10 +91,10 @@ export default function Navigation() {
       {isMenuOpen && (
         <motion.nav
           className={styles.mobileMenu}
-          initial={{ opacity: 0, }}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
           {/* Close Button */}
           <button onClick={() => setIsMenuOpen(false)} className={styles.closeButton} aria-label="Close menu">
@@ -97,12 +102,8 @@ export default function Navigation() {
           </button>
 
           {/* Logo at Top */}
-          <motion.div
-            // initial={{ opacity: 0 }}
-            // animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.4 }}
-          >
-            <Link href="/" className={isHomePage ? styles.menuLogo : styles.menuLogoOpen} onClick={() => setIsMenuOpen(false)}>
+          <div>
+            <Link href="/" className={isHomePage ? styles.menuLogo : styles.menuLogoOpen}>
               <Image
                 src="/es_horizontal.png"
                 alt="ES Celebrations"
@@ -111,25 +112,20 @@ export default function Navigation() {
                 className={isHomePage ? styles.menuLogoImageHome : styles.menuLogoImage}
               />
             </Link>
-          </motion.div>
+          </div>
 
           {/* Menu Items - Vertical Stack */}
           <div className={styles.menuItems}>
-            {menuItems.map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.05, duration: 0.3 }}
-              >
+            {menuItems.map((item) => (
+              <div key={item.label}>
                 <Link
                   href={item.href}
                   className={styles.menuLink}
-                  onClick={() => setIsMenuOpen(false)}
+                  prefetch={true}
                 >
                   {item.label}
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.nav>

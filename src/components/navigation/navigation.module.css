@@ -99,18 +99,6 @@
   display: flex;
   flex-direction: column;
   z-index: 40;
-  animation: slideIn 0.4s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    /* transform: translateX(-100%); */
-  }
-  to {
-    opacity: 1;
-    /* transform: translateX(0); */
-  }
 }
 
 .closeButton {
@@ -136,7 +124,6 @@
 .menuLogo {
   margin: 0;
   text-decoration: none;
-  animation: fadeIn 0.6s ease-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,7 +131,6 @@
 .menuLogoOpen {
   margin: 0;
   text-decoration: none;
-  animation: fadeIn 0.6s ease-out;
   display: flex;
   align-items: center;
 }
@@ -312,7 +298,7 @@
   font-family: var(--font-montserrat), sans-serif;
   letter-spacing: 0.05em;
   white-space: nowrap;
-  animation: fadeInUp 0.3s ease-out backwards;
+  display: block;
 }
 
 /* Desktop: Smaller font */
@@ -326,17 +312,6 @@
 @media (max-width: 768px) {
   .menuLink {
     font-size: 0.9rem;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
