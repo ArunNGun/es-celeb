@@ -12,16 +12,44 @@ const heroImages = [
     alt: "Luxury event celebration"
   },
   {
-    url: "/gallery/hero/PJP_5501.webp",
-    alt: "Luxury event celebration"
-  },
-  {
     url: "/gallery/hero/PJP_5627.webp",
     alt: "Spectacular event moment"
   },
   {
     url: "/gallery/hero/SH4A7372.webp",
     alt: "Elegant celebration"
+  },
+  {
+    url: "/gallery/hero/_MBP0726-min.webp",
+    alt: "Beautiful wedding celebration"
+  },
+  {
+    url: "/gallery/hero/DHA_4994aa-min.webp",
+    alt: "Luxury event celebration"
+  },
+  {
+    url: "/gallery/hero/HPZ_4079-min.webp",
+    alt: "Elegant event setup"
+  },
+  {
+    url: "/gallery/hero/i-S63mDVR-X3-min.webp",
+    alt: "Stunning celebration moment"
+  },
+  {
+    url: "/gallery/hero/RJR_8210-min.webp",
+    alt: "Spectacular event"
+  },
+  {
+    url: "/gallery/hero/RJR_8687-min.webp",
+    alt: "Elegant wedding moment"
+  },
+  {
+    url: "/gallery/hero/SDB_3496-min.webp",
+    alt: "Beautiful event setup"
+  },
+  {
+    url: "/gallery/hero/ZUR_2723-min.webp",
+    alt: "Luxury celebration"
   }
 ]
 

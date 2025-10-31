@@ -319,3 +319,19 @@
   color: var(--color-gold);
   opacity: 1;
 }
+
+.menuLinkActive {
+  color: var(--color-gold);
+  /* font-weight: 600; */
+  /* position: relative; */
+}
+
+/* .menuLinkActive::after {
+  content: '';
+  position: absolute;
+  left: -7px;
+  width: 2px;
+  margin: auto;
+  height: 50%;
+  background-color: var(--color-gold);
+} */

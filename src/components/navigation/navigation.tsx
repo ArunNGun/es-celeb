@@ -75,6 +75,7 @@ export default function Navigation() {
         <Link
           href="/"
           className={isHomePage ? styles.logo : styles.logoSmall}
+          // className={styles.logo}
         >
           <Image
             src="/es_horizontal.png"
@@ -103,30 +104,35 @@ export default function Navigation() {
 
           {/* Logo at Top */}
           <div>
-            <Link href="/" className={isHomePage ? styles.menuLogo : styles.menuLogoOpen}>
+            <Link href="/" className={styles.menuLogo}>
+            {/* <Link href="/" className={isHomePage ? styles.menuLogo : styles.menuLogoOpen}> */}
               <Image
                 src="/es_horizontal.png"
                 alt="ES Celebrations"
                 width={250}
                 height={75}
-                className={isHomePage ? styles.menuLogoImageHome : styles.menuLogoImage}
+                className={styles.menuLogoImageHome}
+                // className={isHomePage ? styles.menuLogoImageHome : styles.menuLogoImage}
               />
             </Link>
           </div>
 
           {/* Menu Items - Vertical Stack */}
           <div className={styles.menuItems}>
-            {menuItems.map((item) => (
-              <div key={item.label}>
-                <Link
-                  href={item.href}
-                  className={styles.menuLink}
-                  prefetch={true}
-                >
-                  {item.label}
-                </Link>
-              </div>
-            ))}
+            {menuItems.map((item) => {
+              const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+              return (
+                <div key={item.label}>
+                  <Link
+                    href={item.href}
+                    className={`${styles.menuLink} ${isActive ? styles.menuLinkActive : ''}`}
+                    prefetch={true}
+                  >
+                    {item.label}
+                  </Link>
+                </div>
+              )
+            })}
           </div>
         </motion.nav>
       )}
